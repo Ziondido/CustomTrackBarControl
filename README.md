@@ -1,6 +1,7 @@
 # 🎛️ CustomTrackBarControl
 
 Welcome to **CustomTrackBarControl** – a cutting-edge, modern WinForms custom track bar control! This control boasts dual thumbs, dynamic range highlighting, and a brand-new feature for creating and interacting with events on the timeline. Perfect for developers looking to add a sleek and functional UI element to their applications.
+![image](https://github.com/user-attachments/assets/c4382249-3d79-426b-9233-9c3ffb8c89f1)
 
 ## 🌟 Features
 
