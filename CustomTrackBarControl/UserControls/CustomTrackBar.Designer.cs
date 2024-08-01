@@ -2,7 +2,7 @@
 {
     partial class CustomTrackBar
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
@@ -22,25 +22,24 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             SuspendLayout();
             // 
-            // CustomTrackBarControl
+            // CustomTrackBar
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Margin = new Padding(5, 6, 5, 6);
-            Name = "CustomTrackBarControl";
-            Size = new Size(500, 35);
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "CustomTrackBar";
+            Size = new Size(500, 40);
             ResumeLayout(false);
         }
 
         #endregion
     }
-
 }

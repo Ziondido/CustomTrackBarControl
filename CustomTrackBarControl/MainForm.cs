@@ -66,5 +66,17 @@ namespace CustomTrackBarControl
             thumb2ValueNumericUpDown.Value = customTrackBar.Value2;
             loggerListBox.Items.Add($"Thumb1: {customTrackBar.Value1}, Thumb2: {customTrackBar.Value2}");
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (customTrackBar.Mode == CustomTrackBar.TrackBarMode.Edit)
+            {
+                customTrackBar.Mode = CustomTrackBar.TrackBarMode.Regular;
+            }
+            else
+            {
+                customTrackBar.Mode = CustomTrackBar.TrackBarMode.Edit;
+            }
+        }
     }
 }

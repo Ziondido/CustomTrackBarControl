@@ -41,8 +41,9 @@
             controlsTableLayoutPanel = new TableLayoutPanel();
             eventsGroupBox = new GroupBox();
             thumbsGroupBox = new GroupBox();
-            loggerGroupBox = new GroupBox();
+            checkBox1 = new CheckBox();
             tableLayoutPanel3 = new TableLayoutPanel();
+            loggerGroupBox = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)eventValueNumericUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)thumb1ValueNumericUpDown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)thumb2ValueNumericUpDown).BeginInit();
@@ -51,8 +52,8 @@
             controlsTableLayoutPanel.SuspendLayout();
             eventsGroupBox.SuspendLayout();
             thumbsGroupBox.SuspendLayout();
-            loggerGroupBox.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
+            loggerGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // customTrackBar
@@ -61,14 +62,15 @@
             customTrackBar.HighlightRange = false;
             customTrackBar.Location = new Point(3, 27);
             customTrackBar.Margin = new Padding(5, 6, 5, 6);
-            customTrackBar.Maximum = 100;
+            customTrackBar.Maximum = 1000000;
             customTrackBar.Minimum = 0;
+            customTrackBar.Mode = UserControls.CustomTrackBar.TrackBarMode.Regular;
             customTrackBar.Name = "customTrackBar";
             customTrackBar.RangeColor = Color.LightBlue;
             customTrackBar.Size = new Size(820, 84);
             customTrackBar.TabIndex = 0;
-            customTrackBar.Value1 = 20;
-            customTrackBar.Value2 = 80;
+            customTrackBar.Value1 = 1;
+            customTrackBar.Value2 = 2;
             customTrackBar.Value1Changed += customTrackBar_ValueChanged;
             customTrackBar.Value2Changed += customTrackBar_ValueChanged;
             customTrackBar.EventClicked += customTrackBar_EventClicked;
@@ -99,6 +101,7 @@
             // 
             eventValueNumericUpDown.Dock = DockStyle.Top;
             eventValueNumericUpDown.Location = new Point(3, 27);
+            eventValueNumericUpDown.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
             eventValueNumericUpDown.Name = "eventValueNumericUpDown";
             eventValueNumericUpDown.Size = new Size(401, 31);
             eventValueNumericUpDown.TabIndex = 4;
@@ -107,6 +110,7 @@
             // 
             thumb1ValueNumericUpDown.Dock = DockStyle.Fill;
             thumb1ValueNumericUpDown.Location = new Point(3, 3);
+            thumb1ValueNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             thumb1ValueNumericUpDown.Name = "thumb1ValueNumericUpDown";
             thumb1ValueNumericUpDown.Size = new Size(194, 31);
             thumb1ValueNumericUpDown.TabIndex = 5;
@@ -116,6 +120,7 @@
             // 
             thumb2ValueNumericUpDown.Dock = DockStyle.Fill;
             thumb2ValueNumericUpDown.Location = new Point(203, 3);
+            thumb2ValueNumericUpDown.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             thumb2ValueNumericUpDown.Name = "thumb2ValueNumericUpDown";
             thumb2ValueNumericUpDown.Size = new Size(195, 31);
             thumb2ValueNumericUpDown.TabIndex = 6;
@@ -200,6 +205,7 @@
             // 
             // thumbsGroupBox
             // 
+            thumbsGroupBox.Controls.Add(checkBox1);
             thumbsGroupBox.Controls.Add(tableLayoutPanel3);
             thumbsGroupBox.Controls.Add(setThumbValuesButton);
             thumbsGroupBox.Dock = DockStyle.Fill;
@@ -210,16 +216,16 @@
             thumbsGroupBox.TabStop = false;
             thumbsGroupBox.Text = "Thumbs Control";
             // 
-            // loggerGroupBox
+            // checkBox1
             // 
-            loggerGroupBox.Controls.Add(loggerListBox);
-            loggerGroupBox.Dock = DockStyle.Fill;
-            loggerGroupBox.Location = new Point(3, 273);
-            loggerGroupBox.Name = "loggerGroupBox";
-            loggerGroupBox.Size = new Size(826, 374);
-            loggerGroupBox.TabIndex = 14;
-            loggerGroupBox.TabStop = false;
-            loggerGroupBox.Text = "Logger";
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(26, 62);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(121, 29);
+            checkBox1.TabIndex = 9;
+            checkBox1.Text = "checkBox1";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // tableLayoutPanel3
             // 
@@ -236,6 +242,17 @@
             tableLayoutPanel3.Size = new Size(401, 34);
             tableLayoutPanel3.TabIndex = 8;
             // 
+            // loggerGroupBox
+            // 
+            loggerGroupBox.Controls.Add(loggerListBox);
+            loggerGroupBox.Dock = DockStyle.Fill;
+            loggerGroupBox.Location = new Point(3, 273);
+            loggerGroupBox.Name = "loggerGroupBox";
+            loggerGroupBox.Size = new Size(826, 374);
+            loggerGroupBox.TabIndex = 14;
+            loggerGroupBox.TabStop = false;
+            loggerGroupBox.Text = "Logger";
+            // 
             // MainForm
             // 
             ClientSize = new Size(832, 650);
@@ -251,8 +268,9 @@
             eventsGroupBox.ResumeLayout(false);
             eventsGroupBox.PerformLayout();
             thumbsGroupBox.ResumeLayout(false);
-            loggerGroupBox.ResumeLayout(false);
+            thumbsGroupBox.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
+            loggerGroupBox.ResumeLayout(false);
             ResumeLayout(false);
         }
         #endregion
@@ -266,5 +284,6 @@
         private GroupBox groupBox3;
         private GroupBox groupBox4;
         private TableLayoutPanel tableLayoutPanel3;
+        private CheckBox checkBox1;
     }
 }
